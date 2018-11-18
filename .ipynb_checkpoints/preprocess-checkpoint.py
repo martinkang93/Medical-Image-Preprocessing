@@ -46,9 +46,9 @@ def get_mask(contours, slices):
             assert np.amax(np.abs(np.diff(nodes[:, 2]))) == 0
             zNew = [round(elem,1) for elem in z ]
             try:
-                z_index = z.index(nodes[0, 2])
+                z_index = z.index(np.around(nodes[0, 2],1))
             except ValueError:
-                z_index = zNew.index(nodes[0, 2])
+                z_index = zNew.index(np.around(nodes[0, 2],1))
             # z_index = z.index(np.around(nodes[0, 2],1))
             r = (nodes[:, 1] - pos_r) / spacing_r
             c = (nodes[:, 0] - pos_c) / spacing_c
